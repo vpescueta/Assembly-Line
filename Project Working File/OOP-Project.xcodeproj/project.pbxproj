@@ -7,9 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C00997612B9F9A110082FCF6 /* ms2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C03DA6172B92D9B100CF662F /* ms2.cpp */; };
 		C051E0842B89B7FD00E0B220 /* ms1.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C051E0832B89B7FD00E0B220 /* ms1.cpp */; };
 		C051E0872B89B85200E0B220 /* Station.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C051E0852B89B85200E0B220 /* Station.cpp */; };
 		C051E08A2B89B86900E0B220 /* Utilities.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C051E0882B89B86900E0B220 /* Utilities.cpp */; };
+		C070064F2BB79E83008821FC /* ms3.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C070064D2BB79E80008821FC /* ms3.cpp */; };
+		C07006542BB7A0A5008821FC /* LineManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C07006502BB79EBD008821FC /* LineManager.cpp */; };
+		C07006552BB7A0B1008821FC /* Workstation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C07006522BB79ECB008821FC /* Workstation.cpp */; };
+		C07B4A0A2B937CA600DD60BC /* CustomerOrder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C03DA6152B92672F00CF662F /* CustomerOrder.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -37,6 +42,12 @@
 		C051E0892B89B86900E0B220 /* Utilities.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Utilities.h; sourceTree = "<group>"; };
 		C051E08B2B8A14E400E0B220 /* Stations1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Stations1.txt; sourceTree = "<group>"; };
 		C051E08C2B8A14E400E0B220 /* Stations2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Stations2.txt; sourceTree = "<group>"; };
+		C070064D2BB79E80008821FC /* ms3.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ms3.cpp; sourceTree = "<group>"; };
+		C070064E2BB79E80008821FC /* AssemblyLine.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = AssemblyLine.txt; sourceTree = "<group>"; };
+		C07006502BB79EBD008821FC /* LineManager.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = LineManager.cpp; sourceTree = "<group>"; };
+		C07006512BB79EBD008821FC /* LineManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LineManager.h; sourceTree = "<group>"; };
+		C07006522BB79ECB008821FC /* Workstation.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Workstation.cpp; sourceTree = "<group>"; };
+		C07006532BB79ECB008821FC /* Workstation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Workstation.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,12 +66,18 @@
 			children = (
 				C051E0832B89B7FD00E0B220 /* ms1.cpp */,
 				C03DA6172B92D9B100CF662F /* ms2.cpp */,
+				C070064D2BB79E80008821FC /* ms3.cpp */,
+				C07006512BB79EBD008821FC /* LineManager.h */,
+				C07006502BB79EBD008821FC /* LineManager.cpp */,
+				C07006532BB79ECB008821FC /* Workstation.h */,
+				C07006522BB79ECB008821FC /* Workstation.cpp */,
 				C03DA6162B92672F00CF662F /* CustomerOrder.h */,
 				C03DA6152B92672F00CF662F /* CustomerOrder.cpp */,
 				C051E0862B89B85200E0B220 /* Station.h */,
 				C051E0852B89B85200E0B220 /* Station.cpp */,
 				C051E0892B89B86900E0B220 /* Utilities.h */,
 				C051E0882B89B86900E0B220 /* Utilities.cpp */,
+				C070064E2BB79E80008821FC /* AssemblyLine.txt */,
 				C03DA6182B92D9B100CF662F /* CustomerOrders.txt */,
 				C051E08B2B8A14E400E0B220 /* Stations1.txt */,
 				C051E08C2B8A14E400E0B220 /* Stations2.txt */,
@@ -133,9 +150,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C07B4A0A2B937CA600DD60BC /* CustomerOrder.cpp in Sources */,
 				C051E0872B89B85200E0B220 /* Station.cpp in Sources */,
+				C07006542BB7A0A5008821FC /* LineManager.cpp in Sources */,
 				C051E0842B89B7FD00E0B220 /* ms1.cpp in Sources */,
+				C070064F2BB79E83008821FC /* ms3.cpp in Sources */,
+				C07006552BB7A0B1008821FC /* Workstation.cpp in Sources */,
 				C051E08A2B89B86900E0B220 /* Utilities.cpp in Sources */,
+				C00997612B9F9A110082FCF6 /* ms2.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

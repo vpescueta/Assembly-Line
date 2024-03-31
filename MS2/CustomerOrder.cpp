@@ -11,7 +11,6 @@
 #include <string>
 #include <iomanip>
 #include <vector>
-#include <algorithm>
 
 #include "CustomerOrder.h"
 #include "Utilities.h"
@@ -98,22 +97,17 @@ bool CustomerOrder::isOrderFilled() const{
 }
 
 bool CustomerOrder::isItemFilled(const std::string& itemName) const{
-//    bool result{true};
-//    for(size_t i = 0; i < m_cntItem && result; i++){
-//        bool match = matchItem(itemName, m_items[i]->m_itemName);
-//        if(match){
-//            if(!m_items[i]->m_isFilled){
-//                result = false;
-//            }
-//        }
-//    }
-//    
-//    return result;
+    bool result{true};
+    for(size_t i = 0; i < m_cntItem && result; i++){
+        bool match = matchItem(itemName, m_items[i]->m_itemName);
+        if(match){
+            if(!m_items[i]->m_isFilled){
+                result = false;
+            }
+        }
+    }
     
-    return std::all_of(m_items, m_items + m_cntItem, [&](Item* item) {
-        bool match = matchItem(itemName, item->m_itemName);
-        return match && item->m_isFilled;
-    });
+    return result;
 }
 
 void CustomerOrder::fillItem(Station& station, std::ostream& os){
@@ -145,19 +139,11 @@ void CustomerOrder::display(std::ostream& os) const{
     //    CUSTOMER_NAME - PRODUCT
     //    [SERIAL] ITEM_NAME - STATUS
     os << m_name << " - " << m_product << std::endl;
-    
-    std::for_each(m_items, m_items + m_cntItem, [&](Item* item){
-        
-    os << "[" << std::setw(6) << std::setfill('0') << item->m_serialNumber << "] " << std::setfill(' ') <<
-    std::left << std::setw(static_cast<int>(m_widthField)) << item->m_itemName <<
-    ((item->m_isFilled) ? "FILLED" : " - TO BE FILLED") << std::endl;
-    });
-    
-//    for(size_t i = 0; i < m_cntItem; i++){
-//        os << "[" << std::setw(6) << std::setfill('0') << m_items[i]->m_serialNumber << "] " << std::setfill(' ') <<
-//        std::left << std::setw(static_cast<int>(m_widthField)) << m_items[i]->m_itemName <<
-//        ((m_items[i]->m_isFilled) ? "FILLED" : " - TO BE FILLED") << std::endl;
-//    }
+    for(size_t i = 0; i < m_cntItem; i++){
+        os << "[" << std::setw(6) << std::setfill('0') << m_items[i]->m_serialNumber << "] " << std::setfill(' ') <<
+        std::left << std::setw(static_cast<int>(m_widthField)) << m_items[i]->m_itemName <<
+        ((m_items[i]->m_isFilled) ? "FILLED" : " - TO BE FILLED") << std::endl;
+    }
 }
 
 bool CustomerOrder::matchItem(std::string searchFor, std::string searchIn){
